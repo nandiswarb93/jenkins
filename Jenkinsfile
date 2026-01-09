@@ -27,8 +27,22 @@ pipeline{
         {
             steps {
                 script {
-                  sh """ echo "Building" """
-                  }
+                sh """ echo "Building"
+
+                echo $COURSE
+
+                echo "Hello ${params.PERSON}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
+                  
+                """
+                }
             }
         }
         stage('Test')
