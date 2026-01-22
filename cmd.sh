@@ -14,8 +14,13 @@ xfs_growfs /var
 
 xfs_growfs /home
 
-sudo curl -o /etc/yum.repos.d/jenkins.repo \
-    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+# sudo curl -o /etc/yum.repos.d/jenkins.repo \
+#     https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+
+sudo curl -fsSL https://pkg.jenkins.io/redhat-stable/jenkins.repo \
+| tee /etc/yum.repos.d/jenkins.repo
+
 
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
