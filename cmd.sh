@@ -24,7 +24,6 @@ sudo curl -fsSL https://pkg.jenkins.io/redhat-stable/jenkins.repo \
 
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
-# Add required dependencies for the jenkins package
 sudo yum install fontconfig java-21-openjdk -y
 
 sudo yum install jenkins -y
@@ -34,3 +33,25 @@ sudo systemctl daemon-reload
 sudo systemctl start jenkins
 
 sudo systemctl enable jenkins
+
+
+
+# # 1. Download repo file
+# sudo curl -fsSL https://pkg.jenkins.io/redhat-stable/jenkins.repo -o /etc/yum.repos.d/jenkins.repo
+
+# # 2. Import Jenkins GPG key
+# sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+# # 3. Install dependencies
+# sudo yum install fontconfig java-21-openjdk -y
+
+# # 4. Install Jenkins
+# sudo yum install jenkins -y
+
+# # 5. Start and enable Jenkins
+# sudo systemctl daemon-reload
+# sudo systemctl start jenkins
+# sudo systemctl enable jenkins
+
+# # 6. Check status
+# systemctl status jenkins
